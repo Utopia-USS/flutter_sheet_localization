@@ -26,7 +26,8 @@ class _MyAppState extends State<MyApp> {
       locale: _currentLocale,
       localizationsDelegates: [
         const AppLocalizationsDelegate(), // <- Your custom delegate
-        GlobalMaterialLocalizations.delegate,
+        ...GlobalMaterialLocalizations.delegates,
+        ...GlobalCupertinoLocalizations.delegates,
         GlobalWidgetsLocalizations.delegate,
       ],
       supportedLocales: localizedLabels.keys.toList(), // <- Supported locales
